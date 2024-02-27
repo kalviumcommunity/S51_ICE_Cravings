@@ -1,0 +1,26 @@
+meta {
+  name: post
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:1000/addice
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+     "id":1,
+    "iceVariety": "CubedIce",
+    "Price": "$0.50",
+    "Availability ": "Yes",
+    "Density ": 57.2,
+    "Temperature ": 32,
+    "Clarity ": "Clear",
+    "Hardness ": 8,
+    "meltingTime ": 20,
+    "Notes": "Standard ice cubes for drinks."
+   }
+}

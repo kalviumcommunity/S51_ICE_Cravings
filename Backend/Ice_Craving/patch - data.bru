@@ -1,0 +1,25 @@
+meta {
+  name: patch - data
+  type: http
+  seq: 3
+}
+
+patch {
+  url: http://localhost:1000/updateicecravings/1
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+    "iceVariety": "CubedIce",
+    "Price": "$0.50",
+    "Availability ": "Yes",
+    "Density ": 57.2,
+    "Temperature ": 32,
+    "Clarity ": "Clear",
+    "Hardness ": 10,
+    "meltingTime ": 20,
+    "Notes": "Standard ice cubes for drinks."
+   }
+}
