@@ -1,0 +1,157 @@
+[
+    {
+     "iceVariety": "Cubed Ice",
+     "Price": "$0.50",
+     "Availability": "Yes",
+     "Density": 57.2,
+     "Temperature": 32,
+     "Clarity": "Clear",
+     "Hardness": 8,
+     "meltingTime": 20,
+     "Notes": "Standard ice cubes for drinks."
+    },
+    {
+     "iceVariety": "Crushed Ice",
+     "Price": "$0.60",
+     "Availability": "Yes",
+     "Density": 50,
+     "Temperature": 32,
+     "Clarity": "Cloudy",
+     "Hardness": 5,
+     "meltingTime": 15,
+     "Notes": "Ideal for cocktails and blended drinks."
+    },
+    {
+     "iceVariety": "Block Ice",
+     "Price": "$0.40",
+     "Availability": "Yes",
+     "Density": 57.6,
+     "Temperature": 32,
+     "Clarity": "Clear",
+     "Hardness": 9,
+     "meltingTime": 60,
+     "Notes": "Used for long-term cooling in coolers."
+    },
+    {
+     "iceVariety": "Dry Ice",
+     "Price": "$1.50",
+     "Availability": "Yes",
+     "Density": 82.6,
+     "Temperature": -109.3,
+     "Clarity": "N\/A",
+     "Hardness": "N\/A",
+     "meltingTime": 30,
+     "Notes": "Produces dense fog; used for special effects."
+    },
+    {
+     "iceVariety": "Flaked Ice",
+     "Price": "$0.70",
+     "Availability": "Yes",
+     "Density": 30,
+     "Temperature": 32,
+     "Clarity": "Cloudy",
+     "Hardness": 4,
+     "meltingTime": 10,
+     "Notes": "Commonly used in seafood displays."
+    },
+    {
+     "iceVariety": "Nugget Ice",
+     "Price": "$0.80",
+     "Availability": "Yes",
+     "Density": 34.5,
+     "Temperature": 32,
+     "Clarity": "Clear",
+     "Hardness": 6,
+     "meltingTime": 25,
+     "Notes": "Chewable ice; popular in healthcare."
+    },
+    {
+     "iceVariety": "Shaved Ice",
+     "Price": "$0.50",
+     "Availability": "Yes",
+     "Density": 32,
+     "Temperature": 32,
+     "Clarity": "Cloudy",
+     "Hardness": 3,
+     "meltingTime": 5,
+     "Notes": "Used in snow cones and desserts."
+    },
+    {
+     "iceVariety": "Tube Ice",
+     "Price": "$0.45",
+     "Availability": "Yes",
+     "Density": 55,
+     "Temperature": 32,
+     "Clarity": "Clear",
+     "Hardness": 7,
+     "meltingTime": 30,
+     "Notes": "Cylindrical ice; commonly used in bars."
+    },
+    {
+     "iceVariety": "Ice Balls",
+     "Price": "$0.75",
+     "Availability": "Yes",
+     "Density": 58,
+     "Temperature": 32,
+     "Clarity": "Clear",
+     "Hardness": 8,
+     "meltingTime": 35,
+     "Notes": "Used in upscale cocktails."
+    },
+    {
+     "iceVariety": "Ice Sculpture",
+     "Price": "Varies",
+     "Availability": "Yes",
+     "Density": "Varies",
+     "Temperature": "Varies",
+     "Clarity": "Clear",
+     "Hardness": "Varies",
+     "meltingTime": "Varies",
+     "Notes": "Custom-made sculptures for events."
+    },
+    {
+     "iceVariety": "Pellet Ice",
+     "Price": "$0.75",
+     "Availability": "Yes",
+     "Density": 32,
+     "Temperature": 32,
+     "Clarity": "Clear",
+     "Hardness": 5,
+     "meltingTime": 20,
+     "Notes": "Soft chewable ice; popular in beverages."
+    },
+    {
+     "iceVariety": "Plate Ice",
+     "Price": "$0.55",
+     "Availability": "Yes",
+     "Density": 57,
+     "Temperature": 32,
+     "Clarity": "Clear",
+     "Hardness": 8,
+     "meltingTime": 40,
+     "Notes": "Flat ice sheets; used in seafood industry."
+    },
+    {
+     "iceVariety": "Crescent Ice",
+     "Price": "$0.70",
+     "Availability": "Yes",
+     "Density": 37,
+     "Temperature": 32,
+     "Clarity": "Clear",
+     "Hardness": 6,
+     "meltingTime": 25,
+     "Notes": "Unique shape; ideal for beverages."
+    },
+    {
+     "iceVariety": "Scale Ice",
+     "Price": "$0.60",
+     "Availability": "Yes",
+     "Density": 46,
+     "Temperature": 32,
+     "Clarity": "Clear",
+     "Hardness": 7,
+     "meltingTime": 30,
+     "Notes": "Used in fish and produce displays."
+    }
+   ]
+   
