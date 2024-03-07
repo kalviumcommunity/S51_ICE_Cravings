@@ -6,6 +6,9 @@ const app=express()
 const mongoose=require("mongoose")
 const {connectDB,isConnected}=require('./config/dbConn.js')
 
+
+const cors = require("cors")
+app.use(cors())
 connectDB();
 app.use(bodyParser.json());
 

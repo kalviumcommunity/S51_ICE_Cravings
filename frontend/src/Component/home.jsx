@@ -1,8 +1,23 @@
-import React from 'react'
-import data from './data.json'
+import React, { useEffect, useState } from 'react'
+// import data from './data.json'
+import axios from "axios"
 
 function Home() {
-    console.log(data)
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response = await axios.get('ht3tp://localhost:1000/getallIce');
+              setData(response.data);
+          } catch (error) {
+              console.error('Error fetching data:', error);
+          }
+      };
+      fetchData();
+  }, []);
+
+  console.log(data);
   return (
     <table>
         <thead>
@@ -22,6 +37,9 @@ function Home() {
         <tbody>
             {data.map((data,index)=>{
                 return(
+
+
+                    
                     <tr key={index}>
                         <td>{data.iceVariety}</td>
                         <td>{data.Price}</td>

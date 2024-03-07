@@ -5,6 +5,7 @@ const putRouter = express.Router();
 const deleteRouter = express.Router();
 const IceCravings = require("../models/ice_cravings.model")
 
+
 getRouter.get('/getallIce',async (req, res) => {
     try{
         const iceCravings = await IceCravings.find();
@@ -19,7 +20,7 @@ getRouter.get('/getallIce',async (req, res) => {
 
 getRouter.get('/getice/:id',async (req, res) => {
     try{
-        const iceCravings = await IceCravings.findone({ClubName:query});
+        const iceCravings = await IceCravings.findone({id:query});
         res.status(200).json(iceCravings);
     } catch(err){
         console.log(err);
