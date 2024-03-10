@@ -25,7 +25,7 @@ const IceForm = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:1000/addice', formData);
-      navigate("/")
+      navigate("/home")
     } catch (error) {
       console.error('Error submitting data:', error);
       alert('Failed to submit data. Please try again.');
