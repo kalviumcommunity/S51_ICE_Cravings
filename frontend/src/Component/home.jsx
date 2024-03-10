@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 // import data from './data.json'
 import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const [data, setData] = useState([]);
-
+  const navigate = useNavigate()
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await axios.get('ht3tp://localhost:1000/getallIce');
+              const response = await axios.get('http://localhost:1000/getallIce');
               setData(response.data);
           } catch (error) {
               console.error('Error fetching data:', error);
@@ -19,7 +20,8 @@ function Home() {
 
   console.log(data);
   return (
-    <table>
+    <>
+        <table>
         <thead>
             <tr>
                 <th>Ice Variety</th>
@@ -56,6 +58,8 @@ function Home() {
         </tbody>
 
     </table>
+    <button onClick={() => {navigate("/form")}}>Add items</button>
+    </>
   )
 }
 
