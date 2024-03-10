@@ -4,7 +4,7 @@ const postRouter = express.Router();
 const putRouter = express.Router();
 const deleteRouter = express.Router();
 const IceCravings = require("../models/ice_cravings.model")
-
+const validateIceVariety =require("../dataValidator")
 
 getRouter.get('/getallIce',async (req, res) => {
     try{
@@ -31,23 +31,30 @@ getRouter.get('/getice/:id',async (req, res) => {
     }
 })
 
-postRouter.post('/addice',async (req, res) => {
-    try{
-        let{id,iceVariety,Price,Availability,Density,Temperature,Clarity,Hardness,meltingTime,Notes} = req.body;
-        const iceCravings = await IceCravings.create({id,iceVariety,Price,Availability,Density,Temperature,Clarity,Hardness,meltingTime,Notes});
+postRouter.post('/addice', async (req, res) => {
+    const validationResult = validateIceVariety(req.body);
+    if (!validationResult.success) {
+        return res.status(400).json({ message: validationResult.error });
+    }
+    try {
+        const iceCravings = await IceCravings.create(validationResult.value);
         res.status(201).json(iceCravings);
-    } catch(err){
+    } catch (err) {
         console.log(err);
         return res.status(500).send({
             message: "Internal server error"
-        })
+        });
     }
-})
+});
 
 putRouter.put("/updateicecravings/:id", async (req, res) => {
     const { id } = req.params;
+    const validationResult = validateIceVariety(req.body);
+    if (!validationResult.success) {
+        return res.status(400).json({ message: validationResult.error });
+    }
     try {
-        const newData = await IceCravings.findByIdAndUpdate(id, req.body, { new: true }); 
+        const newData = await IceCravings.findByIdAndUpdate(id, validationResult.value, { new: true }); 
         if (newData) {
             res.json(newData);
         } else {
