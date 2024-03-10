@@ -38,39 +38,39 @@ const IceForm = () => {
     <form onSubmit={handleSubmit}>
       <label>
         Ice Variety:
-        <input type="text" name="iceVariety" value={formData.iceVariety} onChange={handleChange} />
+        <input type="text" name="iceVariety" value={formData.iceVariety} onChange={handleChange} /><br />
       </label>
       <label>
         Price:
-        <input type="text" name="Price" value={formData.Price} onChange={handleChange} />
+        <input type="text" name="Price" value={formData.Price} onChange={handleChange} /><br />
       </label>
       <label>
         Availability:
-        <input type="text" name="Availability" value={formData.Availability} onChange={handleChange} />
+        <input type="text" name="Availability" value={formData.Availability} onChange={handleChange} /><br />
       </label>
       <label>
         Density:
-        <input type="number" name="Density" value={formData.Density} onChange={handleChange} />
+        <input type="number" name="Density" value={formData.Density} onChange={handleChange} /><br />
       </label>
       <label>
         Temperature:
-        <input type="number" name="Temperature" value={formData.Temperature} onChange={handleChange} />
+        <input type="number" name="Temperature" value={formData.Temperature} onChange={handleChange} /><br />
       </label>
       <label>
         Clarity:
-        <input type="text" name="Clarity" value={formData.Clarity} onChange={handleChange} />
+        <input type="text" name="Clarity" value={formData.Clarity} onChange={handleChange} /><br />
       </label>
       <label>
         Hardness:
-        <input type="number" name="Hardness" value={formData.Hardness} onChange={handleChange} />
+        <input type="number" name="Hardness" value={formData.Hardness} onChange={handleChange} /><br />
       </label>
       <label>
         Melting Time:
-        <input type="number" name="meltingTime" value={formData.meltingTime} onChange={handleChange} />
+        <input type="number" name="meltingTime" value={formData.meltingTime} onChange={handleChange} /><br />
       </label>
       <label>
         Notes:
-        <textarea name="Notes" value={formData.Notes} onChange={handleChange} />
+        <textarea name="Notes" value={formData.Notes} onChange={handleChange} /><br />
       </label>
       <button type="submit" >Submit</button>
     </form>

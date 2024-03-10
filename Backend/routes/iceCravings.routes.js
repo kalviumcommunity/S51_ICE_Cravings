@@ -19,8 +19,9 @@ getRouter.get('/getallIce',async (req, res) => {
 })
 
 getRouter.get('/getice/:id',async (req, res) => {
+    const { id } = req.params;
     try{
-        const iceCravings = await IceCravings.findone({id:query});
+        const iceCravings = await IceCravings.findByIdAndUpdate(id, req.body, { new: true });
         res.status(200).json(iceCravings);
     } catch(err){
         console.log(err);
@@ -43,31 +44,28 @@ postRouter.post('/addice',async (req, res) => {
     }
 })
 
-putRouter.patch('/updateicecravings/:id',async (req, res) => {
+putRouter.put("/updateicecravings/:id", async (req, res) => {
+    const { id } = req.params;
     try {
-        const filter ={"id":Number(req.params.id)}
-        let{id,iceVariety,Price,Availability,Density,Temperature,Clarity,Hardness,meltingTime,Notes} = req.body;
-        const iceCravings = await IceCravings.findOneAndUpdate(filter,{id,iceVariety,Price,Availability,Density,Temperature,Clarity,Hardness,meltingTime,Notes});
-        res.status(200).json(iceCravings);
-    }catch(err){
-        console.log(err);
-        return res.status(500).send({
-            message: "Internal server error"
-        })
+        const newData = await IceCravings.findByIdAndUpdate(id, req.body, { new: true }); 
+        if (newData) {
+            res.json(newData);
+        } else {
+            res.status(404).json({ message: "Item not found" });
+        }
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
-})
+});
 
-deleteRouter.delete('/deleteicecravings/:id',async (req, res) => {
+deleteRouter.delete("/deleteicecravings/:id", async (req, res) => {
+    const { id } = req.params;
     try {
-        const filter ={"id":Number(req.params.id)}
-        const iceCravings = await IceCravings.findOneAndDelete(filter);
-        res.status(200).json(iceCravings);
-    }catch(err){
-        console.log(err);
-        return res.status(500).send({
-            message: "Internal server error"
-        })
+        await IceCravings.findByIdAndDelete(id); 
+        res.sendStatus(204);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
-})
+});
 
 module.exports = {getRouter, postRouter, deleteRouter, putRouter};

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import data from './data.json'
 import axios from "axios"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link } from 'react-router-dom';
 
 function Home() {
   const [data, setData] = useState([]);
@@ -18,6 +18,19 @@ function Home() {
       fetchData();
   }, []);
 
+  const handleDelete = async (id) =>{
+    try {
+        const res = await axios.delete(`http://localhost:1000/deleteicecravings/${id}`)
+        console.log(res.data);
+        setData(
+            data.filter((obj) =>{
+                return obj._id != id
+            })
+        )
+      } catch (error) {
+        console.error('Error:', error);
+      }
+}
   console.log(data);
   return (
     <>
@@ -33,6 +46,7 @@ function Home() {
                 <th>Hardness</th>
                 <th>Melting time</th>
                 <th>Notes</th>
+                <th>Actions</th>
             </tr>
         </thead>
         
@@ -52,6 +66,8 @@ function Home() {
                         <td>{data.Hardness}</td>
                         <td>{data.meltingTime}</td>
                         <td>{data.Notes}</td>
+                        <td><Link to={`/form/${data._id}`}><button>Update</button></Link></td>
+                        <td><button onClick={()=>{handleDelete(data._id)}}>Delete</button></td>
                     </tr>
                 )
             })}

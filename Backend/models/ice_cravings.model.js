@@ -1,6 +1,9 @@
 const mongoose=require('mongoose')
 const iceCravingsSchema = new mongoose.Schema({
-    id:{type:Number},
+    _id:{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
+      },
     iceVariety: {type:String},
     Price: {type:String},
     Availability: {type:String},
