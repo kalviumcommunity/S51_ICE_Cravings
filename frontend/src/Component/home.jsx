@@ -5,12 +5,14 @@ import { useNavigate , Link } from 'react-router-dom';
 
 function Home() {
   const [data, setData] = useState([]);
+  const [dup , setDup] = useState(data)
   const navigate = useNavigate()
   useEffect(() => {
       const fetchData = async () => {
           try {
               const response = await axios.get('http://localhost:1000/getallIce');
               setData(response.data);
+              setDup(response.data)
           } catch (error) {
               console.error('Error fetching data:', error);
           }
@@ -31,9 +33,28 @@ function Home() {
         console.error('Error:', error);
       }
 }
+
+const handleFilter = (e) =>{
+    const input = e.target.value
+    if (input == "All"){
+      setDup(data)
+    }else{
+      setDup(
+        data.filter((item) =>{
+          return item.Availability == input
+        })
+      )
+    }
+    
+  }
   console.log(data);
   return (
     <>
+    <p>Availabilty</p><select  onChange={handleFilter}name="" id="">
+        <option value="All">All</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
         <table>
         <thead>
             <tr>
@@ -51,7 +72,7 @@ function Home() {
         </thead>
         
         <tbody>
-            {data.map((data,index)=>{
+            {dup.map((data,index)=>{
                 return(
 
 
@@ -74,6 +95,7 @@ function Home() {
         </tbody>
 
     </table>
+
     <button onClick={() => {navigate("/form")}}>Add items</button>
     </>
   )
