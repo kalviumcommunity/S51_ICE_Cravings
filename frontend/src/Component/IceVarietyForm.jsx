@@ -40,7 +40,7 @@ const IceVarietyForm = () => {
     e.preventDefault();
     try {
       const response = await axios.put(`http://localhost:1000/updateicecravings/${id}`, iceData);
-      navigate("/")
+      navigate("/home")
     } catch (error) {
       console.error('Error updating data:', error);
     }
