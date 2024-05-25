@@ -31,4 +31,4 @@ We would like to express our gratitude to all contributors who have helped shape
 
 Happy exploring, and may your drinks stay cool with the perfect ice! ❄️🥂
 
-Frontend Deployment link : https://ice-cravings.netlify.app/
+Frontend Deployment link: https://ice-cravings.netlify.app/
